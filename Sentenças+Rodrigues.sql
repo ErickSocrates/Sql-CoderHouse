@@ -1,0 +1,33 @@
+  USE mysql;
+
+	-- 1º USUÁRIO -  LOJA DE GOIAS, APENAS DE LEITURA
+    
+		CREATE USER loja_go IDENTIFIED BY 'LJ_GO_123';
+    
+		SELECT * FROM user; -- VERIFICAR SE REALMENTE CRIROU O USUÁRIO
+    
+			-- PERMISSÃO APENAS PARA LEITURA
+    
+				GRANT SELECT ON *.* TO loja_go; -- PERMITIR APENAS LEITURA EM TODO O BANCO livraria PARA O USUÁRIO 'loja_go';
+    
+				SHOW GRANTS FOR loja_go; -- VERIFICAR SE A PERMISSÃO FOI APENAS DE LEITURA;
+    
+	
+    
+    -- 2º USUÁRIO - NOVO COLABORADOR T.I
+    
+		CREATE USER newcolab_ti IDENTIFIED BY 'novousuario@123';
+    
+		SELECT * FROM user; -- VERIFICAR SE REALMENTE CRIROU O USUÁRIO
+    
+			-- PERMISSÃO APENAS PARA LEITURA, INSERÇÃO E MODIFICAÇÃO DE DADOS
+    
+				GRANT SELECT, INSERT, UPDATE ON *.* TO newcolab_ti; -- PERMITIR LEITURA, INSERÇÃO E MODIFICAÇÃO DE DADOS EM TODO O BANCO livraria PARA O USUÁRIO 'newcolab_ti';
+    
+				SHOW GRANTS FOR newcolab_ti; -- VERIFICAR SE A PERMISSÃO FOI APENAS DE LEITURA;
+                
+                
+        
+    
+
+    
